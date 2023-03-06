@@ -1,7 +1,7 @@
 # Author: Eleora Hamming
 # Main scene
 
-import scenes.intro_scene as intro_scene
+import scenes.intro_scene
 import menus.menu as menu
 import menus.characterStats
 import menus.party
@@ -17,26 +17,26 @@ class playGame():
 
         while True:
             intro = """
-            Welcome to this world. Here is a text sample.
+            Welcome to the initial prototype for Witch Hunt. 
+            Please type 'h' or 'help' for a quick overview of common commands.
             """
             print(intro)
 
-            print("Please enter a direction in which to explore.")
-            valid_commands = ["north", "east", "west", "south"]
-            command = input()
-            menu.main_menu(command, self.party, self.character, self.inventory)
-            if command not in valid_commands:
-                print("try again")
-            else:
-                if command == "north":
-                    print("head north")
-                elif command == "east":
-                    print("head east")
-                elif command == "west":
-                    print("next step")
+            start = input()
+            if start == "h" or start == "help":
+                print("MENU COMMANDS:")
+                print("-h help \t -i inventory\t -p party \t-c character stats")
+                print("\nCOMMON MOVEMENTS:")
+                print("\t attack/atk \t look \t talk \t equip \t read")
+                print("\t north/n \t east/e \t south/s \t west/w")
+                print("\nAre you ready to start the first demo? (Y/N)")
+                s = input()
+                if s not in ("y", "Yes", "yes", "Y"):
+                    print("Exiting demo.")
+                    exit()
                 else:
-                    print("south")
-                break
+                    print('done')
+                    scenes.intro_scene.intro_scene(self.character, self.party, self.inventory)
 
 instance = playGame()
 instance.play()
