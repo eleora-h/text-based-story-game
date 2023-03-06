@@ -1,0 +1,13 @@
+The intent of this demo is to provide a quick overview of the various game aspects (i.e. a horizontal slice.) The demo will focus on providing a glimpse at
+the following aspects:
+
+1. Explore a simple dungeon
+2. Interact with a character
+3. Combat
+4. Use your familiar
+5. Check morality/open inventory 
+
+Need to create menus for the following...
+inventory
+character stats
+rapport
