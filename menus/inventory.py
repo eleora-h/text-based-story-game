@@ -1,7 +1,6 @@
 # Author: Eleora Hamming
-
+# Imports
 import yaml
-
 
 class inventory():
     _instance = None
@@ -13,9 +12,10 @@ class inventory():
         return cls._instance
 
     def __init__(self):
-        self.items = { "Weapons": { "sword": { "attack": 5, "options": ["stab", "parry", "cut"] }}, "Consumables": { "HP": { "health": 25, "quantity": 4 }}}
+        self.items = { "Weapons": { "sword": { "attack": 5, "options": ["stab", "parry", "cut"], "equipped": False }, "staff": { "intellect": 5, "options": [ "ice", "water" ], "equipped": True }}, "Consumables": { "HP Pot": { "health": 25, "quantity": 4 }}}
 
     def get_items(self):
+        print('\n')
         print(yaml.dump(self.items, default_flow_style=False))
 
     def use_consumable(self, consumable):
@@ -28,5 +28,5 @@ class inventory():
         # to do
         pass
 
-    def print_stats(self):
-        print("THIS IS THE INVENTORY")
+    def get_menu(self):
+        self.get_items()

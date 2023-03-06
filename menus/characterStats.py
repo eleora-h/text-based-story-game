@@ -20,7 +20,7 @@ class characterStats():
         return self.health
 
     def set_health(self, amount):
-        self.health = self.health - amount
+        self.health = self.health + amount
     
     def print_stats(self):
         print("CHARACTER STATS:")
