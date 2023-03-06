@@ -13,13 +13,14 @@ class party():
         self.active_party = []
         self.companions = ["Cat"]
 
+
     def get_party(self):
         if self.active_party:
-            print("Your active party is: " + self.active_party)
+            print("Your active party is: " + ', '.join(self.active_party))
         else:
             print("No members in your party.")
 
-    def set_active_party(self):
+    def add_to_active_party(self):
         print("Available companions: " + str(self.companions))
         print("Who do you want to add to your party?")
         name = input()
@@ -28,11 +29,24 @@ class party():
         else:
             self.active_party.append(name)
             print(name + " added to party.")
-            print(self.active_party)
+
+    def remove_from_active_party(self):
+        print("Who do you want to remove from your party?")
+        name = input()
+        if name not in self.active_party:
+            print("Companion not found.")
+        else:
+            self.active_party.remove(name)
+            print(name + " removed from party.")
 
     def get_menu(self):
         self.get_party()
         print("Do you want to change your party? (Y/N)")
         text = input()
         if text == "Y" or text == "y":
-            self.set_active_party()
+            print("Do you want to add or remove a member? (A/R)")
+            n_text = input()
+            if n_text in ("add", "a", "A"):
+                self.add_to_active_party()
+            else:
+                self.remove_from_active_party()

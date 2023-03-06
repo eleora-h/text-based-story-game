@@ -7,32 +7,36 @@ import menus.characterStats
 import menus.party
 import menus.inventory
 
-if __name__ == "__main__":
+class playGame():
+    def __init__(self):
+        self.character = menus.characterStats.characterStats()
+        self.inventory = menus.inventory.inventory()
+        self.party = menus.party.party()
 
-    while True:
-        intro = """
-        Welcome to this world. Here is a test sample.
-        """
-        print(intro)
+    def play(self):
 
-        # Initialize character, party, inventory info.
-        char = menus.characterStats.characterStats()
-        inventory = menus.inventory.inventory()
-        party = menus.party.party()
+        while True:
+            intro = """
+            Welcome to this world. Here is a text sample.
+            """
+            print(intro)
 
-        print("Please enter a direction in which to explore.")
-        valid_commands = ["north", "east", "west", "south"]
-        command = input()
-        menu.main_menu(command, party, char, inventory)
-        if command not in valid_commands:
-            print("try again")
-        else:
-            if command == "north":
-                print("head north")
-            elif command == "east":
-                print("head east")
-            elif command == "west":
-                print("next step")
+            print("Please enter a direction in which to explore.")
+            valid_commands = ["north", "east", "west", "south"]
+            command = input()
+            menu.main_menu(command, self.party, self.character, self.inventory)
+            if command not in valid_commands:
+                print("try again")
             else:
-                print("south")
-            break
+                if command == "north":
+                    print("head north")
+                elif command == "east":
+                    print("head east")
+                elif command == "west":
+                    print("next step")
+                else:
+                    print("south")
+                break
+
+instance = playGame()
+instance.play()

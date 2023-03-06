@@ -1,5 +1,8 @@
 # Author: Eleora Hamming
 
+import yaml
+
+
 class inventory():
     _instance = None
 
@@ -13,7 +16,7 @@ class inventory():
         self.items = { "Weapons": { "sword": { "attack": 5, "options": ["stab", "parry", "cut"] }}, "Consumables": { "HP": { "health": 25, "quantity": 4 }}}
 
     def get_items(self):
-        print(self.items)
+        print(yaml.dump(self.items, default_flow_style=False))
 
     def use_consumable(self, consumable):
         if consumable in self.items.get("Consumables"):
@@ -25,5 +28,5 @@ class inventory():
         # to do
         pass
 
-def print_stats():
-    print("THIS IS THE INVENTORY")
+    def print_stats(self):
+        print("THIS IS THE INVENTORY")
