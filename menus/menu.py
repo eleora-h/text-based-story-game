@@ -5,14 +5,13 @@ import menus.inventory
 import menus.party
 import menus.help
 
-def main_menu(args):
+def main_menu(args, party, character, inventory):
     if args == "help" or args == "h":
         menus.help.printmessage()
     if args == "inventory" or args == "i":
         menus.inventory.printmessage()
     if args == "character" or args == "c":
-        menus.characterStats.print_stats()
+        character.print_stats()
     if args == "party" or args == "p":
-        menus.party.printmessage()
-
-print("done")
+        party.get_menu()
+    return party, character, inventory

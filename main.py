@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print("Please enter a direction in which to explore.")
         valid_commands = ["north", "east", "west", "south"]
         command = input()
-        menu.main_menu(command)
+        menu.main_menu(command, party, char, inventory)
         if command not in valid_commands:
             print("try again")
         else:

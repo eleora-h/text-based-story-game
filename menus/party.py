@@ -11,20 +11,28 @@ class party():
 
     def __init__(self):
         self.active_party = []
-        self.companions = ["Kathy"]
+        self.companions = ["Cat"]
 
-    def get_items(self):
-        print(self.items)
-
-    def use_consumable(self, consumable):
-        if consumable in self.items.get("Consumables"):
-            print("found")
+    def get_party(self):
+        if self.active_party:
+            print("Your active party is: " + self.active_party)
         else:
-            print("Consumable not found!")
+            print("No members in your party.")
 
-    def add_item(self, item):
-        # to do
-        pass
+    def set_active_party(self):
+        print("Available companions: " + str(self.companions))
+        print("Who do you want to add to your party?")
+        name = input()
+        if name not in self.companions:
+            print("Companion not found.")
+        else:
+            self.active_party.append(name)
+            print(name + " added to party.")
+            print(self.active_party)
 
-def printmessage():
-    print("THIS IS THE INVENTORY")
+    def get_menu(self):
+        self.get_party()
+        print("Do you want to change your party? (Y/N)")
+        text = input()
+        if text == "Y" or text == "y":
+            self.set_active_party()

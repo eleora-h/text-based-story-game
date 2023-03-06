@@ -28,4 +28,4 @@ class characterStats():
         print("Mana: " + str(self.mana))
         print("Intellect: " + str(self.intellect))
         print("Strength: " + str(self.strength))
-        print("Resilience: " + self.resilience)
+        print("Resilience: " + str(self.resilience))
