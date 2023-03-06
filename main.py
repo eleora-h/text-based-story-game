@@ -3,6 +3,9 @@
 
 import scenes.intro_scene as intro_scene
 import menus.menu as menu
+import menus.characterStats
+import menus.party
+import menus.inventory
 
 if __name__ == "__main__":
 
@@ -11,6 +14,12 @@ if __name__ == "__main__":
         Welcome to this world. Here is a test sample.
         """
         print(intro)
+
+        # Initialize character, party, inventory info.
+        char = menus.characterStats.characterStats()
+        inventory = menus.inventory.inventory()
+        party = menus.party.party()
+
         print("Please enter a direction in which to explore.")
         valid_commands = ["north", "east", "west", "south"]
         command = input()
@@ -27,4 +36,3 @@ if __name__ == "__main__":
             else:
                 print("south")
             break
-        
