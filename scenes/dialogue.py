@@ -6,4 +6,15 @@ class dialogue():
         self._play()
 
     def _play(self):
-        print('hello world')
+        print("This is a sample dialogue...")
+        while True:
+            print("\nSelect dialogue.\n 1. Moral answer \n 2. Immoral answer.")
+            text = input()
+            if text == "1":
+                print("Initialize morally gray dialogue.")
+            elif text == "2": 
+                print("Initialize immoral dialogue.")
+            else:
+                print("Option not recogized, try again.")
+            print("End conversation.")
+            break
