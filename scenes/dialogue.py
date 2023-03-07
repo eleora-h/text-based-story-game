@@ -3,9 +3,9 @@
 
 class dialogue():
     def __init__(self):
-        self._play()
+        self.__play()
 
-    def _play(self):
+    def __play(self):
         print("This is a sample dialogue...")
         while True:
             print("\nSelect dialogue.\n 1. Moral answer \n 2. Immoral answer.")

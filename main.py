@@ -30,8 +30,8 @@ class playGame():
                 print("\t attack/atk \t look \t talk \t equip \t read")
                 print("\t north/n \t east/e \t south/s \t west/w")
                 print("\nAre you ready to start the first demo? (Y/N)")
-                s = input()
-                if s not in ("y", "Yes", "yes", "Y"):
+                s = input().lower()
+                if s not in ("y", "yes"):
                     print("Exiting demo.")
                     exit()
                 else:
