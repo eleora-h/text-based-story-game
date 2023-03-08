@@ -35,6 +35,10 @@ class intro_scene():
                 if c == "south" or c == "s":
                     print("\n you head south.")
                     continue
+                if c == "equip":
+                    print("\n nothing to equip.")
+                if c == "read":
+                    print("\n you read the sign in front of you. It says 'THIS IS A BORING DEMO'.")
                 if c == "look":
                     print("\n you look around and find nothing of interest.")
                     continue
