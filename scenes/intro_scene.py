@@ -17,11 +17,7 @@ class intro_scene():
 
     def play(self):
         textbox = """
-        	\nWelcome to Eden.
-            \nYou are Edyth, the first woman to have an affinity for life magic in hundreds of years. Born in a small farming village, 
-            \nyou are plucked from your family and brought to the Capitol, where you are brought before the Queen herself.
-            \nYou find yourself in a gilded throne room, with a tall and stern woman facing you on a throne of gold. She has dark hair and cold eyes, and her lips are
-            \n painted cherry red. There is no smile on her face. “Welcome, my daughter,” she says to you. 
+        	\nWelcome to Eden. You are Edyth, the first woman to have an affinity for life magic in hundreds of years. Born in a small farming village, you are plucked from your family and brought to the Capitol, where you are brought before the Queen herself. You find yourself in a gilded throne room, with a tall and stern woman facing you on a throne of gold. She has dark hair and cold eyes, and her lips are painted cherry red. There is no smile on her face. “Welcome, my daughter,” she says to you. 
         """
         print(textbox)
 

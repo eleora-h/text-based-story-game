@@ -1,6 +1,5 @@
 # Author: Eleora Hamming
 
-
 class introDialogue():
     def __init__(self):
         self.next_scene = None
