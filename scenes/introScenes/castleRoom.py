@@ -3,9 +3,12 @@
 import menus.menu
 import scenes.introScenes.combatIntro
 
-class castleRoom(
-            menus.menu.main_menu(c, self.party, self.character, self.inventory)):
-    def __init__(self):
+class castleRoom():
+    def __init__(self, character, party, inventory):
+        self.character = character
+        self.party = party
+        self.inventory = inventory
+
         self.__play()
 
     def __play(self):

@@ -43,12 +43,11 @@ class intro_scene():
                     scene_dialogue = scenes.introScenes.introDialogue.introDialogue()
                     next_scene = scene_dialogue.get_next_scene()
                     if next_scene == 1:
-                        scenes.introScenes.misaIntro.misaIntro()
+                        scenes.introScenes.misaIntro.misaIntro(self.character, self.party, self.inventory)
                     else:
-                        scenes.introScenes.esdeathIntro.esdeathIntro()
+                        scenes.introScenes.esdeathIntro.esdeathIntro(self.character, self.party, self.inventory)
                     print("End scene.")
                     break
                 if c == "attack" or c == "atk":
                     print("\nYou cannot attack this character.")
-                    #scenes.combat.combat(self.character)
                 

@@ -3,7 +3,10 @@
 import scenes.introScenes.castleRoom
 
 class misaIntro():
-    def __init__(self):
+    def __init__(self, character, party, inventory):
+        self.character = character
+        self.party = party
+        self.inventory = inventory
         self.__play()
 
     def __play(self):
@@ -29,5 +32,5 @@ class misaIntro():
                 if text == "2":
                     print("\n You stare at the plant, but nothing happens. Maybe you tried the wrong spell.")
             print("\nMisa gasps audibly, and claps her hands together in delight! 'Well done!' she exclaims. 'That's far more than I expected from a novice.' She launches into a long-winded dialogue about magic and safety and too much for you to follow. Hours past and eventually you must look dead on your feet, because she takes pity on you. 'Time to take you to your room,' she says, and you follow her out of the study.")
-            scenes.introScenes.castleRoom.castleRoom()
+            scenes.introScenes.castleRoom.castleRoom(self.character, self.party, self.inventory)
 
