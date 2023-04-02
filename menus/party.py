@@ -11,7 +11,7 @@ class party():
 
     def __init__(self):
         self.active_party = []
-        self.companions = ["Cat"]
+        self.companions = []
 
 
     def get_party(self):

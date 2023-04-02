@@ -3,6 +3,9 @@
 import menus.menu
 import scenes.dialogue
 import scenes.combat
+import scenes.introScenes.introDialogue
+import scenes.introScenes.esdeathIntro
+import scenes.introScenes.misaIntro
 
 class intro_scene():
     def __init__(self, character, party, inventory):
@@ -13,37 +16,43 @@ class intro_scene():
         self.play()
 
     def play(self):
-        print("\n\nSCENE 1. This would describe the scene you are currently in and what the surroundings look like.\n You cannot leave this space (i.e. you can infinitely write north or east without getting anything new.) \n This is really just meant to demo a few of what the systems might look like. \n Recommend testing combat and dialogue.")
+        textbox = """
+        	\nWelcome to Eden.
+            \nYou are Edyth, the first woman to have an affinity for life magic in hundreds of years. Born in a small farming village, 
+            \nyou are plucked from your family and brought to the Capitol, where you are brought before the Queen herself.
+            \nYou find yourself in a gilded throne room, with a tall and stern woman facing you on a throne of gold. She has dark hair and cold eyes, and her lips are
+            \n painted cherry red. There is no smile on her face. “Welcome, my daughter,” she says to you. 
+        """
+        print(textbox)
 
         while True:
-            print("\nScene description. How do you wish to proceed?")
+            print("\nHow do you wish to proceed?")
             valid_commands = ["north", "east", "west", "south", "n", "e", "s", "w", "talk", "look", "attack", "atk", "equip", "read", "h", "i", "p", "c"]
             c = input().lower()
             menus.menu.main_menu(c, self.party, self.character, self.inventory)
             if c not in valid_commands:
                 print("Command not recognized, try again.")
             else:
-                if c == "north" or c == "n":
-                    print("\n you head north")
-                    continue
-                if c == "east" or c == "e":
-                    print("\n you head east.")
-                    continue
-                if c == "west" or c == "w":
-                    print("\n you head west.")
-                    continue
-                if c == "south" or c == "s":
-                    print("\n you head south.")
+                if c in ["north", "n", "east", "e", "west", "w", "south", "s"]:
+                    print("\nYou cannot leave this room!")
                     continue
                 if c == "equip":
-                    print("\n nothing to equip.")
+                    print("\nNothing to equip.")
                 if c == "read":
-                    print("\n you read the sign in front of you. It says 'THIS IS A BORING DEMO'.")
+                    print("\nNothing to read.")
                 if c == "look":
-                    print("\n you look around and find nothing of interest.")
+                    print("\n A grand hall with soft, plush red carpets and vinery along the back wall beyond the gildened gold throne. Tall stained glass windows let bright morning light stream in.")
                     continue
                 if c == "talk":
-                    scenes.dialogue.dialogue()
+                    scene_dialogue = scenes.introScenes.introDialogue.introDialogue()
+                    next_scene = scene_dialogue.get_next_scene()
+                    if next_scene == 1:
+                        scenes.introScenes.misaIntro.misaIntro()
+                    else:
+                        scenes.introScenes.esdeathIntro.esdeathIntro()
+                    print("End scene.")
+                    break
                 if c == "attack" or c == "atk":
-                    scenes.combat.combat(self.character)
+                    print("\nYou cannot attack this character.")
+                    #scenes.combat.combat(self.character)
                 
