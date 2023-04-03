@@ -22,11 +22,10 @@ class castleRoom():
             if c not in valid_commands:
                 print("Command not recognized, try again.")
             else:
-                if c in ["north", "n", "east", "e", "west", "w", "south", "s"]:
-                    print("\nYou cannot leave this room! The door was locked behind you.")
-                    continue
+                if c in ["north", "n", "east", "e", "south", "s", "west", "w"]:
+                    print("\nYou cannot leave this room. Try 'sleep' for next scene.")
                 if c == "sleep":
-                    scenes.introScenes.combatIntro.combatIntro()
+                    scenes.introScenes.combatIntro.combatIntro(self.character, self.party, self.inventory)
                 if c == "equip":
                     print("\nAdded 2 health potions to inventory.")
                 if c == "read":
