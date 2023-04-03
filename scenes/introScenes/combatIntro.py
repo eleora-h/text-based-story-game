@@ -1,6 +1,7 @@
 # Author: Eleora Hamming
 
 import menus.menu
+import scenes.combat
 
 class combatIntro():
     def __init__(self, character, party, inventory):
@@ -11,9 +12,9 @@ class combatIntro():
         self.__play()
 
     def __room_two(self):
-        print("END PROGRAM.")
+        scenes.combat.combat(self.character)
+        print("You reached the end of the demo! Congrats.")
         exit()
-        pass
 
     def __room_one(self):
         print("\nYou exit the room, and the statue that was outside your door last night is gone. You are in a dark corridor, and nothing is as you remember it.")
