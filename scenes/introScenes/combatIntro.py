@@ -13,11 +13,11 @@ class combatIntro():
 
     def __room_two(self):
         scenes.combat.combat(self.character)
-        print("You reached the end of the demo! Congrats.")
+        print("\nYou reached the end of the demo! Congrats.")
         exit()
 
     def __room_one(self):
-        print("\nYou exit the room, and the statue that was outside your door last night is gone. You are in a dark corridor, and nothing is as you remember it.")
+        print("\nYou exit the room, and the statue that was outside your door last night is gone. You are in a dark corridor, and nothing is as you remember it. Is this what your tutor meant by new trials? Stranding you in a strange place with no guide and no help?")
 
         while True:
             valid_commands = ["north", "east", "west", "south", "n", "e", "s", "w", "talk", "look", "attack", "atk", "equip", "read", "h", "i", "p", "c"]
@@ -31,14 +31,14 @@ class combatIntro():
                     valid_commands = ["north", "east", "west", "south", "n", "e", "s", "w", "talk", "look", "attack", "atk", "equip", "read"]
                     c = input().lower()
                     if c not in valid_commands:
-                        print("Command not recognized, try again.")
+                        print("\nCommand not recognized, try again.")
                     if c in ["west", "w"]:
                         self.__room_two()
                         break
                     if c in ["north", "n"]:
-                        print("You move back to previous scene. You are standing in a dark corridor stretching to both your left and right, and the entrance to your room is behind you.")
+                        print("\nYou move back to previous scene. You are standing in a dark corridor stretching to both your left and right, and the entrance to your room is behind you.")
                     if c in ["read", "talk", "look", "attack", "atk", "equip", "read"]:
-                        print("Action not available. Move back to previous scene.")
+                        print("\nAction not available. Move back to previous scene.")
                 if c in ["south", "s"]:
                     # go back to main room
                     print("\nYou re-enter your room.")
@@ -76,12 +76,12 @@ class combatIntro():
                 if c in ["east", "e"]:
                     print("\nThere's only a smooth stone wall.")
                 if c in ["south", "s"]:
-                    print("\n Stone wall with a painting on it.")
+                    print("\nStone wall with a painting on it.")
                 if c in ["north", "n"]:
                     # go next scene
                     self.__room_one()
                 if c in ["west", "w'"]:
-                    print("You look out the window. It overlooks a garden of flowers surrounded by tall stone walls.")
+                    print("\nYou look out the window. It overlooks a garden of flowers surrounded by tall stone walls.")
                 if c == "equip":
                     print("\nNothing to equip.")
                 if c == "read":

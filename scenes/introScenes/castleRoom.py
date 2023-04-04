@@ -12,7 +12,8 @@ class castleRoom():
         self.__play()
 
     def __play(self):
-        print("You follow your guide to a room in one of the tall towers. She departs with a quick goodbye. Also note, in your room, you can exit to next scene by typing in 'sleep.'")
+        print("\nYou follow your guide to a room in one of the tall towers. She departs with a quick goodbye. Also note, in your room, you can exit to next scene by typing in 'sleep.'")
+        found_dagger = False
 
         while True:
             print("\nHow do you wish to proceed?")
@@ -25,9 +26,14 @@ class castleRoom():
                 if c in ["north", "n", "east", "e", "south", "s", "west", "w"]:
                     print("\nYou cannot leave this room. Try 'sleep' for next scene.")
                 if c == "sleep":
-                    scenes.introScenes.combatIntro.combatIntro(self.character, self.party, self.inventory)
+                    if not found_dagger:
+                        print("\nYou missed an item from this room! Try using the 'equip' command.")
+                    else:
+                        scenes.introScenes.combatIntro.combatIntro(self.character, self.party, self.inventory)
                 if c == "equip":
-                    print("\nAdded 2 health potions to inventory.")
+                    print("\nYou squat down beside the bed and you see a strange glitter. Curious, you reach underneath - and your hand touches something hard and sharp. Carefully, you draw out a shining dagger. It's plain, with a silver hilt, but it's polished and it's edge is sharp. Dagger added to inventory.")
+                    found_dagger = True
+                    self.inventory.add_item()
                 if c == "read":
                     print("\nThere are two books on a plush chair by the fire. One is named 'A Hopeless Romantic' and the other is titled 'An Exhausted Student's Memoirs'.")
                 if c == "look":

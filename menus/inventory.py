@@ -12,7 +12,7 @@ class inventory():
         return cls._instance
 
     def __init__(self):
-        self.items = { "Weapons": { "sword": { "attack": 5, "options": ["stab", "parry", "cut"], "equipped": False }, "staff": { "intellect": 5, "options": [ "ice", "water" ], "equipped": True }}, "Consumables": { "HP Pot": { "health": 25, "quantity": 4 }}}
+        self.items = { "Weapons": {}, "Consumables": { "HP Pot": { "health": 25, "quantity": 4 }}}
 
     def get_items(self):
         print('\n')
@@ -24,9 +24,9 @@ class inventory():
         else:
             print("Consumable not found!")
 
-    def add_item(self, item):
-        # to do
-        pass
+    def add_item(self):
+        item = {"dagger": { "attack": 5, "options": ["stab", "parry", "cut"], "equipped": True}}
+        self.items["Weapons"] = item
 
     def get_menu(self):
         self.get_items()
