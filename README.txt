@@ -1,3 +1,5 @@
+Project for game design class in final year of university.
+
 Download all files.
 Uses python 3.
 Change directory in terminal to path/"Game Demo"
